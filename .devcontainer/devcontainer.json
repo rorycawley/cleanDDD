@@ -14,7 +14,9 @@
 		"vscode": {
 			"settings": {},
 			"extensions": [
-				"streetsidesoftware.code-spell-checker"
+				"github.copilot",
+				"humao.rest-client", "pkief.material-icon-theme", "lakshits11.neon-city",
+				"jesschadwick.nuget-reverse-package-search", "ms-dotnettools.csdevkit"
 			]
 		}
 	},

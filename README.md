@@ -5,6 +5,8 @@ https://www.youtube.com/watch?v=fhM0V2N1GpY&list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0
 
 https://www.youtube.com/watch?v=tLk4pZZtiDY
 
+https://www.youtube.com/watch?v=fO2T5tRu3DE
+
 # Some commands
 
 ## Build / Run / Test the solution
@@ -115,3 +117,27 @@ dotnet new webapi -o ./src/cleanDDD.WebApi
 dotnet sln add ./src/cleanDDD.WebApi/cleanDDD.WebApi.csproj
 dotnet add ./src/cleanDDD.WebApi/ reference ./src/cleanDDD.Presentation/ ./src/cleanDDD.Application/ ./src/cleanDDD.Infrastructure/
 ```
+
+# Create a Domain model
+
+We convert a domain model to classes to represent the entities.
+
+We'll use tactical patterns to design our initial model and then impose some constraints:
+* Aggregate (Orders, Products, Customers)
+* Entity
+* Value
+
+Orders
+* Order
+* LineItem
+
+Products
+* Product
+* Category
+
+Customers
+* Customer
+
+We create a feature folder for each of our Aggregates to encapsulation our Entities and Values and other behaviours from our Domain model, in our Domain layer project. By organising our domain model around features / Aggregates we're going to have a much more cohesive domain model where everything that is tightly coupled is sitting together inside of the same folder.
+
+We create an Entity to represent our Customer and provide it with a few attributes that can identify it as a Customer.

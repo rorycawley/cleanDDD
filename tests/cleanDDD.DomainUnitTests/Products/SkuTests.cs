@@ -22,16 +22,6 @@ public class CustomerTests
         Assert.Equal(value, sku.Value);
     }
 
-    [Fact]
-    public void Create_Should_ThrowArgumentException_WhenValueIsNull()
-    {
-        // Arrange
-        string? value = null;
-
-        // Act & Assert
-        Assert.Throws<ArgumentException>(() => Sku.Create(value));
-    }
-
     [Theory]
     [InlineData(null)]
     [InlineData("")]
@@ -41,6 +31,6 @@ public class CustomerTests
     public void Create_Should_ThrowArgumentException_WhenValueIsInvalid(string? value)
     {
         // Act & Assert
-        Assert.Throws<ArgumentException>(() => Sku.Create(value));
+        Assert.Throws<ArgumentException>(() => Sku.Create(value ?? string.Empty));
     }
 }

@@ -6,8 +6,8 @@ public class Customer
 {
     public Guid Id { get; private set; }
 
-    public string? Email { get; private set; }
-    public string? Name { get; private set; }
+    public string Email { get; private set; } = string.Empty;
+    public string Name { get; private set; } = string.Empty;
 
     // Use a private constructor to enforce use of the factory method
     private Customer(string email, string name)

@@ -33,4 +33,21 @@ public class CustomerTests
         // Act & Assert
         Assert.Throws<ArgumentException>(() => Sku.Create(value ?? string.Empty));
     }
+
+    // public static IEnumerable<object[]> InvalideSkuLengthDataMethod() => new List<object[]>
+    // {
+    //     new object[] { null },
+    //     new object[] { "" },
+    //     new object[] { " " },
+    //     new object[] { "ABCDE" },
+    //     new object[] { "ABCDE12345FGHIJK" }
+    // };
+
+    // [Theory]
+    // [MemberData(nameof(InvalideSkuLengthDataMethod))]
+    // public void Create_Should_ThrowArgumentException_WhenValueIsInvalid2(string? value)
+    // {
+    //     // Act & Assert
+    //     Assert.Throws<ArgumentException>(() => Sku.Create(value ?? string.Empty));
+    // }
 }

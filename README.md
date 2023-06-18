@@ -67,17 +67,17 @@ mkdir src
 cd src
 ```
 
-## Create the Domain project and add it to the solution
+## Create the Domain (layer) project and add it to the solution
 
 ```bash
-dotnet new classlib -o cleanDDD.Domain
+dotnet new classlib -o ./src/cleanDDD.Domain
 dotnet sln add ./src/cleanDDD.Domain/cleanDDD.Domain.csproj 
 ```
 
-## Create the Application project and add it to the solution, make it depend on the Domain layer (but Domain layer cannot depend on another layer)
+## Create the Application (layer) project and add it to the solution, make it depend on the Domain layer (but Domain layer cannot depend on another layer)
 
 ```bash
-dotnet new classlib -o cleanDDD.Application
+dotnet new classlib -o ./src/cleanDDD.Application
 dotnet sln add ./src/cleanDDD.Application/cleanDDD.Application.csproj 
 dotnet add ./src/cleanDDD.Application/ reference ./src/cleanDDD.Domain/
 ```
@@ -90,3 +90,28 @@ dotnet add package MediatR
 dotnet add package FluentValidation.DependencyInjectionExtensions
 ```
 
+## Create the Infrastructure (layer) project and add it to the solution, make it depend on the Application layer and Domain layer
+
+```bash
+dotnet new classlib -o ./src/cleanDDD.Infrastructure
+dotnet sln add ./src/cleanDDD.Infrastructure/cleanDDD.Infrastructure.csproj 
+dotnet add ./src/cleanDDD.Infrastructure/ package Microsoft.Extensions.DependencyInjection.Abstractions
+dotnet add ./src/cleanDDD.Infrastructure/ reference ./src/cleanDDD.Application/ ./src/cleanDDD.Domain/
+```
+
+## Create the Presentation (layer) project and add it to the solution, make it depend on the Application layer and Domain layer
+
+```bash
+dotnet new classlib -o ./src/cleanDDD.Presentation
+dotnet sln add ./src/cleanDDD.Presentation/cleanDDD.Presentation.csproj
+dotnet add ./src/cleanDDD.Presentation/ package Microsoft.Extensions.DependencyInjection.Abstractions
+dotnet add ./src/cleanDDD.Presentation/ reference ./src/cleanDDD.Application/ ./src/cleanDDD.Domain/
+```
+
+## Create the WebAPI project and add it the to the solution
+
+```bash
+dotnet new webapi -o ./src/cleanDDD.WebApi
+dotnet sln add ./src/cleanDDD.WebApi/cleanDDD.WebApi.csproj
+dotnet add ./src/cleanDDD.WebApi/ reference ./src/cleanDDD.Presentation/ ./src/cleanDDD.Application/ ./src/cleanDDD.Infrastructure/
+```

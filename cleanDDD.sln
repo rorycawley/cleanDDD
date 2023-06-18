@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cleanDDD.Presentation", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cleanDDD.WebApi", "src\cleanDDD.WebApi\cleanDDD.WebApi.csproj", "{80983C57-2D61-407E-B369-E1BEF8C686AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{340247AB-5A71-497C-8A2C-5A5F56263EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cleanDDD.DomainUnitTests", "tests\cleanDDD.DomainUnitTests\cleanDDD.DomainUnitTests.csproj", "{DE7E28B8-79D3-4AD6-8D60-B9C88988C435}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{80983C57-2D61-407E-B369-E1BEF8C686AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80983C57-2D61-407E-B369-E1BEF8C686AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80983C57-2D61-407E-B369-E1BEF8C686AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7E28B8-79D3-4AD6-8D60-B9C88988C435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7E28B8-79D3-4AD6-8D60-B9C88988C435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7E28B8-79D3-4AD6-8D60-B9C88988C435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7E28B8-79D3-4AD6-8D60-B9C88988C435}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +66,6 @@ Global
 		{77D394A3-C295-4FB5-A614-673BB0B68038} = {3095E8DB-FDEA-4666-B647-65A36B83338A}
 		{D49BB53F-5B54-48F4-9613-CE7541D43182} = {3095E8DB-FDEA-4666-B647-65A36B83338A}
 		{80983C57-2D61-407E-B369-E1BEF8C686AC} = {3095E8DB-FDEA-4666-B647-65A36B83338A}
+		{DE7E28B8-79D3-4AD6-8D60-B9C88988C435} = {340247AB-5A71-497C-8A2C-5A5F56263EBC}
 	EndGlobalSection
 EndGlobal

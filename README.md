@@ -76,6 +76,21 @@ dotnet new classlib -o ./src/cleanDDD.Domain
 dotnet sln add ./src/cleanDDD.Domain/cleanDDD.Domain.csproj 
 ```
 
+## Create the Domain Unit Tests project and add it to the solution
+
+```bash
+dotnet new xunit -o ./tests/cleanDDD.DomainUnitTests
+dotnet sln add ./tests/cleanDDD.DomainUnitTests/cleanDDD.DomainUnitTests.csproj
+dotnet add ./tests/cleanDDD.DomainUnitTests/ reference ./src/cleanDDD.Domain/
+```
+
+Add a feature folder inside to match the feature / Aggregate Customers
+
+```bash
+mkdir ./tests/cleanDDD.DomainUnitTests/Customers
+touch ./tests/cleanDDD.DomainUnitTests/Customers/CustomerTests.cs
+```
+
 ## Create the Application (layer) project and add it to the solution, make it depend on the Domain layer (but Domain layer cannot depend on another layer)
 
 ```bash
